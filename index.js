@@ -51,7 +51,7 @@ router.post('/chat', async (ctx) => {
   const { message } = ctx.request.body;
 
   const response = await axios.post(
-    'https://api.openai.com/v1/engines/davinci-codex/completions',
+    'https://api.openai.com/v1/chat/completions',
     {
       prompt: message,
       max_tokens: 50,
