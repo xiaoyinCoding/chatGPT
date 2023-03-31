@@ -10,7 +10,7 @@ function generateJwtSecret(length = 32) {
 const jwtSecret = generateJwtSecret();
 
 // Load existing .env file or create an empty object if file doesn't exist
-const envFilePath = path.join(__dirname, 'disposition.env');
+const envFilePath = path.join(__dirname, '.env');
 const envConfig = fs.existsSync(envFilePath) ? dotenv.parse(fs.readFileSync(envFilePath)) : {};
 
 // Update or set JWT_SECRET
