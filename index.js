@@ -47,7 +47,7 @@ router.post('/login', async (ctx) => {
   }
 });
 
-router.post('/chat', async (ctx) => {
+router.post('/chat',  jwt({ secret: process.env.JWT_SECRET }), async (ctx) => {
   const { message } = ctx.request.body;
 
   const response = await axios.post(
